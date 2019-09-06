@@ -5,6 +5,6 @@ using System;
 
 public class TileColor : Tile
 {
-    private Action OnEnterTile;
-    private Action OnExitTile;
+    private event Action OnEnterTile;
+    private event Action OnExitTile;
 }
