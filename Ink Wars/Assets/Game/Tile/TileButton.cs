@@ -6,12 +6,12 @@ using System.Linq;
 
 public enum SigantureColor
 {
-    Red, Blue, Yellow, Green
+    Red, Blue, Yellow, Green, White
 }
 
 public class TileButton : Tile
 {
-    public static Action<SigantureColor> OnButtonPressed;
+    public static Action OnButtonPressed;
 
     public SigantureColor color;
 
@@ -19,7 +19,7 @@ public class TileButton : Tile
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            OnButtonPressed(color);
+            OnButtonPressed();
         }
     }
 }
