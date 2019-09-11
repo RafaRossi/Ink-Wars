@@ -22,11 +22,8 @@ public class CharacterMovement : MonoBehaviour
 
     public void Move(Vector3 direction)
     {      
-        controller.Move(direction * Time.deltaTime * moveSpeed);     
-    }
+        controller.Move(direction * Time.fixedDeltaTime * moveSpeed);
 
-    public void Rotate(Vector3 direction)
-    {
         if (direction == Vector3.zero)
             return;
 

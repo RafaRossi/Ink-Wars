@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2022041371686624720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5841871938075589106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9649707377ad53b4f8c5f42d3bb315b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1783422553404607209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25,6 +13,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 0.1, z: 10}
   m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &2022041371686624720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841871938075589106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9649707377ad53b4f8c5f42d3bb315b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 4
+  materials:
+  - {fileID: 2100000, guid: 37d3ab5ba995b2a4b87fcf086a87e879, type: 2}
+  - {fileID: 2100000, guid: 68d274b78bd324c4cb6c840951831023, type: 2}
+  - {fileID: 2100000, guid: fa1cd13796d389449aae69ddce75fc0c, type: 2}
+  - {fileID: 2100000, guid: e4f76e1917f0d85439672a4e856dc81c, type: 2}
+  - {fileID: 2100000, guid: 0a192e27946945b499bdecdfcd7c95e3, type: 2}
 --- !u!1001 &9151320948627132718
 PrefabInstance:
   m_ObjectHideFlags: 0

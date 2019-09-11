@@ -40,11 +40,12 @@ public class CharacterBase : MonoBehaviour
         characterMovement = GetComponent<CharacterMovement>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Vector3 direction = new Vector3(input.Horizontal, 0, input.Vertical);
+        Vector3 direction = new Vector3(input.Horizontal, 0, input.Vertical).normalized;
+
+        direction = new Vector3(direction.x, 0f, direction.z);
 
         characterMovement.Move(direction);
-        characterMovement.Rotate(direction);
     }
 }

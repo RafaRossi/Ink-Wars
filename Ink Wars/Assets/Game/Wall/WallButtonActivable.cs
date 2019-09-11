@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallButtonActivable : Wall, IActivable
 {
-    public SigantureColor color;
+    public SignatureColor color;
 
     private void OnEnable()
     {

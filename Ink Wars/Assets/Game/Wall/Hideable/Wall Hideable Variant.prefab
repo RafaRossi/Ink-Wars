@@ -1,6 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8269882388734094435
+--- !u!95 &1355346848971661176
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704272802086631437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 38d3ee25a49d6fb46986932f693363d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1949220206224193443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,6 +31,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b62930ab1d1e5408efdab424be7a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showClip: {fileID: 7400000, guid: 85be58f13f1de8b4796ed01ca2a364bf, type: 2}
+  hideClip: {fileID: 7400000, guid: f8831450767109445ae13282784a1184, type: 2}
 --- !u!1001 &5509848561260688738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24,20 +45,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Hideable Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1932546992217292479, guid: eb7a2659470d04d43876a9d19afef27a,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 586163275263889281, guid: eb7a2659470d04d43876a9d19afef27a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 586163275263889281, guid: eb7a2659470d04d43876a9d19afef27a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 586163275263889281, guid: eb7a2659470d04d43876a9d19afef27a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 586163275263889281, guid: eb7a2659470d04d43876a9d19afef27a,
         type: 3}
@@ -90,6 +116,11 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7528785702776493052, guid: eb7a2659470d04d43876a9d19afef27a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea941934077de0748ad6b167ece339f9, type: 2}
+    - target: {fileID: 3566947837537004194, guid: eb7a2659470d04d43876a9d19afef27a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
