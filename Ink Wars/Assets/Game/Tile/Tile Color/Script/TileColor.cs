@@ -23,24 +23,9 @@ public class TileColor : Tile
         }
     }
 
-    private Dictionary<SignatureColor, Material> pairs = new Dictionary<SignatureColor, Material>();
-
-    [SerializeField]
-    private List<Material> materials = new List<Material>();
-
-    private void Awake()
-    {
-        Array colorsArray = Enum.GetValues(typeof(SignatureColor));
-
-        for (int i = 0; i < colorsArray.Length - 1; i++)
-        {
-            pairs.Add((SignatureColor)colorsArray.GetValue(i), materials[i]);
-        }
-    }
-
     private void ChangeColor()
     {
-        GetComponent<MeshRenderer>().material = pairs[Color];
+        GetComponent<MeshRenderer>().material = TerritorialLevelManager.pairs[Color];
 
         OnChangeColor();
     }

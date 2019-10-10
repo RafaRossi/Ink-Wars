@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,32 +21,30 @@ public struct PlayerInput
         }
     }
 
-    public bool IsShooting
+    public Vector3 Direction
     {
         get
         {
-            return Input.GetButton("Fire1");
+            return new Vector3(Horizontal, 0, Vertical);
+        }
+    }
+
+    public bool IsShooting
+    {
+        get
+        {            
+            return Input.GetButton("Fire1"); ;
         }
     }
 }
 
-[RequireComponent(typeof(CharacterMovement))]
+public enum PlayerID
+{
+    Player1, Player2, Player3, Player4, Default
+}
+
 public class CharacterBase : MonoBehaviour
 {
-    private PlayerInput input;
-    private CharacterMovement characterMovement;
-
-    private void Awake()
-    {
-        characterMovement = GetComponent<CharacterMovement>();
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 direction = new Vector3(input.Horizontal, 0, input.Vertical).normalized;
-
-        direction = new Vector3(direction.x, 0f, direction.z);
-
-        characterMovement.Move(direction);
-    }
+    public PlayerInput Input { get; set; }
+    public PlayerID PlayerID { get; set; }
 }

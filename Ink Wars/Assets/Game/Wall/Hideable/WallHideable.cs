@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallHideable : Wall
 {
     [SerializeField]
-    private WallStage initialStage;
+    private WallStage initialStage = WallStage.Visible;
 
     private WallStage stage;
     public WallStage Stage

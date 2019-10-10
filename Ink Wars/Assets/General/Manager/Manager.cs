@@ -32,4 +32,9 @@ public class Manager<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
     #endregion
+
+    protected virtual void Initialize()
+    {
+
+    }
 }
