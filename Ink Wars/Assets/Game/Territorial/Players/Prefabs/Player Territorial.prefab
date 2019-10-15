@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2382715061048848019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770750168629326651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6639fff13862f9c4394d6e2412269179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5163366656743036708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,18 +26,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 0
   points: 0
---- !u!114 &2382715061048848019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770750168629326651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6639fff13862f9c4394d6e2412269179, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4487041599286336031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92,6 +92,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 392604381332093651, guid: e9284b5e9c028874dbdbd400d3ca7371,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 392604381332093651, guid: e9284b5e9c028874dbdbd400d3ca7371,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2382715061048848019}
+    - target: {fileID: 392604381332093651, guid: e9284b5e9c028874dbdbd400d3ca7371,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFireRequest
+      objectReference: {fileID: 0}
+    - target: {fileID: 392604381332093651, guid: e9284b5e9c028874dbdbd400d3ca7371,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 392604381332093651, guid: e9284b5e9c028874dbdbd400d3ca7371,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9284b5e9c028874dbdbd400d3ca7371, type: 3}

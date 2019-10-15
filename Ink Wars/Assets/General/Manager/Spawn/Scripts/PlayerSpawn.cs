@@ -20,10 +20,9 @@ public class PlayerSpawn : SpawnPoint
         SpawnManager.Instance.initializePlayerPrefab -= SpawnPlayer;
     }
 
-    private void SpawnPlayer(GameObject prefab, PlayerID playerID)
+    private void SpawnPlayer(GameObject prefab)
     {
         player = spawnRequested(prefab);
-        player.GetComponent<CharacterBase>().PlayerID = playerID;
     }
 
     private void RespawnPlayer(GameObject player)

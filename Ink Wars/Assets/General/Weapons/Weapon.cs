@@ -1,19 +1,36 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public abstract class Weapon : ScriptableObject, ITriggerable
+public abstract class Weapon : MonoBehaviour, ITriggerable
 {
-    public string weaponName;
+    [Header("Weapon Properties")]
+    [SerializeField] protected Transform weaponHandler;
 
-    public int totalAmmo;
-    public int maxAmmo;
-    public int currentAmmo;
+    [SerializeField] protected WeaponAsset weapon;
 
-    public float timeToReload;
+    protected CharacterFire character;
 
-    public float timeBetweenShots;
+    private void Awake()
+    {
+        character = GetComponentInParent<CharacterFire>();
+    }
 
-    public float shootForce;
+    private void OnEnable()
+    {
+        character.Fire += Trigger;
+    }
 
-    public abstract void Initialize(GameObject gameObject);
+    private void OnDisable()
+    {
+        character.Fire -= Trigger;
+    }
+
+    private void Start()
+    {
+        weapon.Initialize(gameObject);
+    }
+
+    public abstract void Initialize();
     public abstract void Trigger();
 }
