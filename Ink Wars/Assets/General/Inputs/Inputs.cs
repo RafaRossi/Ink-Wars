@@ -18,7 +18,7 @@ public class Inputs : IInputActionCollection
             ""id"": ""d9365e86-a0f5-46fc-af4c-3d62e7fb2d07"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Axis"",
                     ""type"": ""Value"",
                     ""id"": ""98d5a4e9-e649-4a82-af4a-21d7ac61f3ef"",
                     ""expectedControlType"": ""Vector2"",
@@ -42,7 +42,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -53,7 +53,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -64,7 +64,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -75,7 +75,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -86,7 +86,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -97,7 +97,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -108,7 +108,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -119,7 +119,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -130,7 +130,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -141,7 +141,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -152,7 +152,7 @@ public class Inputs : IInputActionCollection
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
+                    ""action"": ""Axis"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -617,7 +617,7 @@ public class Inputs : IInputActionCollection
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Axis = m_Player.FindAction("Axis", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -681,13 +681,13 @@ public class Inputs : IInputActionCollection
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Axis;
     private readonly InputAction m_Player_Fire;
     public struct PlayerActions
     {
         private Inputs m_Wrapper;
         public PlayerActions(Inputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Axis => m_Wrapper.m_Player_Axis;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -698,9 +698,9 @@ public class Inputs : IInputActionCollection
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                Axis.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAxis;
+                Axis.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAxis;
+                Axis.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAxis;
                 Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
@@ -708,9 +708,9 @@ public class Inputs : IInputActionCollection
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                Move.started += instance.OnMove;
-                Move.performed += instance.OnMove;
-                Move.canceled += instance.OnMove;
+                Axis.started += instance.OnAxis;
+                Axis.performed += instance.OnAxis;
+                Axis.canceled += instance.OnAxis;
                 Fire.started += instance.OnFire;
                 Fire.performed += instance.OnFire;
                 Fire.canceled += instance.OnFire;
@@ -869,7 +869,7 @@ public class Inputs : IInputActionCollection
     }
     public interface IPlayerActions
     {
-        void OnMove(InputAction.CallbackContext context);
+        void OnAxis(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
     }
     public interface IUIActions

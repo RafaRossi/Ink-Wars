@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public interface IActivable
 {
@@ -12,5 +13,12 @@ public interface ITriggerable
 
 public interface IDamageable
 {
-    void TakeDamage(int damage = 0, Elements element = null);
+    void TakeDamage(int damage = 0);
+}
+
+public interface IEquipable
+{
+    void Equip(GameObject equiper);
+
+    void Unequip(GameObject equiper);
 }

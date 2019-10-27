@@ -2,53 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterBase))]
-public class CharacterHealth : MonoBehaviour, IDamageable
+public class CharacterHealth : CharacterComponent, IDamageable
 {
-    private CharacterBase character;
-
-    [Header("Character Health")]
     private float maxHealth;
     private float CurrentHealth
     {
         get
         {
-            return character.health.Value;
+            return Profile.health;
         }
         set
         {
-            character.health.Value = value;
+            Profile.health = value;
         }
     }
 
-    private float ElementalResistance
+    protected override void InitializeComponent()
     {
-        get
-        {
-            return character.elementalResistance.Value;
-        }
-    }
-
-    private void Awake()
-    {
-        character = GetComponent<CharacterBase>();
-    }
-
-    private void OnEnable()
-    {
-        character.InitializeCharacter += InitializeHealth;
-    }
-
-    private void OnDisable()
-    {
-        character.InitializeCharacter -= InitializeHealth;
-    }
-
-    public void InitializeHealth(CharacterAsset character)
-    {
-        maxHealth = character.maxHealth;
-
-        CurrentHealth = maxHealth;
+        maxHealth = Profile.health;
     }
 
     public void Heal(float amount)
@@ -56,12 +27,11 @@ public class CharacterHealth : MonoBehaviour, IDamageable
         CurrentHealth += amount;
     }
 
-    public void TakeDamage(int damage = 0, Elements element = null)
+    public void TakeDamage(int damage = 0)
     {
-        CurrentHealth -= damage - (damage * (character.defense.Value/100));
+        CurrentHealth -= damage - (damage * (Profile.defense/100));
 
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, Mathf.Infinity);
-
     }
 
     public void Die()

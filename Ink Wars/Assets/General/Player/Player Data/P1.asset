@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76952f4efe2a1cb4590d36b0df89316e, type: 3}
+  m_Name: P1
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 324ffa79fbfc1274890366430f036692, type: 2}
+  weapon: {fileID: 11400000, guid: b0d55968ba34bf048b765549d1433dc5, type: 2}
+  hat: {fileID: 0}
+  clothes: {fileID: 0}
+  items: []

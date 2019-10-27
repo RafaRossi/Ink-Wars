@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class ItemsAssets : ScriptableObject
+{
+    [Header("Item Infos")]
+    public string itemName;
+    public string description;   
+    public abstract void Initialize(GameObject obj);
+}
+
+[System.Serializable]
+public class StatModifier
+{
+    public FloatVariable stat;
+    public float modifierValue; 
+}

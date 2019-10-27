@@ -5,19 +5,34 @@ using UnityEngine;
 
 public class CharacterBase : MonoBehaviour
 {
-    public CharacterAsset Character { get; set; }
+    public PlayerData player;
 
-    public FloatVariable speed;
-    public FloatVariable health;
-    public FloatVariable defense;
-    public FloatVariable attack;
+    public CharacterProfile profile;
+    
+    public Action InitializeCharacter = delegate { };
 
-    public FloatVariable elementalResistance;
+    private void Awake()
+    {
+        profile = new CharacterProfile(player);
+    }
 
-    public Action<CharacterAsset> InitializeCharacter = delegate { };
+    private void OnEnable()
+    {
+        InitializeCharacter += Initialize;
+    }
+
+    private void OnDisable()
+    {
+        InitializeCharacter -= Initialize;
+    }
+
+    private void Initialize()
+    {
+        player.Initialize(gameObject);
+    }
 
     private void Start()
     {
-        InitializeCharacter(Character);
+        InitializeCharacter();
     }
 }

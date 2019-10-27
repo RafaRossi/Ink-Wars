@@ -4,23 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(CharacterController), typeof(CharacterBase))]
-public class CharacterMovement : MonoBehaviour
+[RequireComponent(typeof(CharacterController))]
+public class CharacterMovement : CharacterComponent
 {
     private CharacterController controller;
-    private CharacterBase character;
 
     [SerializeField]
     private float MoveSpeed
     {
         get
         {
-            return character.speed.Value;
+            return Profile.speed;
         }
 
         set
         {
-            character.speed.Value = value;
+            Profile.speed = value;
         }
     }
 
@@ -31,14 +30,25 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 direction = Vector2.zero;
 
-    public void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         controller = GetComponent<CharacterController>();
     }
 
+    protected override void InitializeComponent()
+    {
+        
+    }
     public void OnMoveRequest(InputAction.CallbackContext context)
     {
-        direction = context.ReadValue<Vector2>();
+       SetDirection(context.ReadValue<Vector2>());
+    }
+
+    public void SetDirection(Vector2 direction)
+    {
+        this.direction = direction;
     }
 
     private void FixedUpdate()

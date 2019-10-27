@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6166110226067613987}
   - component: {fileID: 6166110226067613986}
   - component: {fileID: 3713747410786674270}
+  - component: {fileID: 2315862172724065521}
   m_Layer: 0
   m_Name: Player Base
   m_TagString: Untagged
@@ -234,6 +235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af28cc4b686d3a4d81efc2151b19fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: {fileID: 0}
+  health: {fileID: 0}
+  defense: {fileID: 0}
+  attack: {fileID: 0}
+  elementalResistance: {fileID: 0}
 --- !u!114 &6166110226067613986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d1ef7c25646c749b669a33df21c5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   turnSpeed: 0.1
 --- !u!114 &3713747410786674270
 MonoBehaviour:
@@ -260,4 +265,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e090c159238254699b8236f85bb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: {fileID: 11400000, guid: b537f7e1699bad84698850f55d873234, type: 2}
+--- !u!114 &2315862172724065521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166110226067613988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591706e732c81e24f8ed0907dbcf9b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

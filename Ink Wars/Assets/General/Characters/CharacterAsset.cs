@@ -5,16 +5,25 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class CharacterAsset : ScriptableObject
 {
-    public string characterName;
-    public string description;
+    [SerializeField] private string characterName = "";
+    [SerializeField] private string description = "";
 
-    public float maxHealth;
+    [SerializeField] private float maxHealth = 0;
 
-    public float movementSpeed;
-    public float turnSpeed;
+    [SerializeField] private float movementSpeed = 0;
+    [SerializeField] private float turnSpeed = 0;
 
-    public float baseAttack;
-    public float baseDefense;
+    [SerializeField] private float baseAttack = 0;
+    [SerializeField] private float baseDefense = 0;
 
-    public GameObject characterModel;
+    [SerializeField] private GameObject characterModel = null;
+
+    public string CharacterName { get => characterName; }
+    public string Description { get => description; }
+    public float MaxHealth { get => maxHealth; }
+    public float MovementSpeed { get => movementSpeed; }
+    public float TurnSpeed { get => turnSpeed; }
+    public float BaseAttack { get => baseAttack; }
+    public float BaseDefense { get => baseDefense; }
+    public GameObject CharacterModel { get => characterModel; }
 }
