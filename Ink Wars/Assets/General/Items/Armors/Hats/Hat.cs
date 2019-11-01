@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hat : CharacterEquipments
+public class Hat : Equipments
 {
     protected override EquipmentAssets Equipment => Profile.hat;
 
-    protected override void InitializeComponent()
+    protected override void OnDisable()
     {
-        base.InitializeComponent();
+        
+    }
 
-        Instantiate(Profile.hat.equipmentModel, transform.position, Quaternion.identity);
+    protected override void OnEnable()
+    {
+        
     }
 }

@@ -22,9 +22,9 @@ public class ProjectileWeapon : Weapon
 
     private ProjectileWeaponAssets projectileWeapon;
 
-    protected override void InitializeComponent()
+    protected override void Initialize()
     {
-        base.InitializeComponent();
+        base.Initialize();
 
         projectileWeapon = weapon as ProjectileWeaponAssets;
 

@@ -6,7 +6,7 @@ using System;
 
 public class CharacterFire : CharacterComponent
 {
-    public event Action Fire;
+    public Action Fire = delegate { };
     
     protected override void InitializeComponent()
     {
@@ -14,6 +14,11 @@ public class CharacterFire : CharacterComponent
     }
 
     public void OnFireRequest(InputAction.CallbackContext context)
+    {
+        FireRequest();
+    }
+
+    public void FireRequest()
     {
         Fire();
     }

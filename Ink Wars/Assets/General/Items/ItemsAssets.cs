@@ -10,10 +10,3 @@ public abstract class ItemsAssets : ScriptableObject
     public string description;   
     public abstract void Initialize(GameObject obj);
 }
-
-[System.Serializable]
-public class StatModifier
-{
-    public FloatVariable stat;
-    public float modifierValue; 
-}

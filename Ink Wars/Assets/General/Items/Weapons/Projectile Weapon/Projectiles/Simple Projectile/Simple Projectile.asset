@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177884a55fdf8174b8dd28d5bfbe5709, type: 3}
   m_Name: Simple Projectile
   m_EditorClassIdentifier: 
-  projectileName: Simple
+  itemName: Simple Projectile
   description: A simple projectile
   baseDamage: 10
   mass: 0.2
@@ -20,4 +20,3 @@ MonoBehaviour:
     type: 3}
   projectileImpactParticles: {fileID: 7622574648227387697, guid: 29b6848cd420b42479a9e024b81d34cd,
     type: 3}
-  element: {fileID: 11400000, guid: d6874137ddc77f74bbb4d82cc4094ee4, type: 2}

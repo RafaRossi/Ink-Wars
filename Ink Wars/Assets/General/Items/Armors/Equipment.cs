@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterBase))]
-public abstract class Equipment : MonoBehaviour
+public abstract class Equipments : MonoBehaviour
 {
-    [SerializeField] protected EquipmentAssets equipment;
+    protected virtual EquipmentAssets Equipment { get; set; }
 
     protected CharacterBase character;
+    protected CharacterProfile Profile
+    {
+        get
+        {
+            return character.profile;
+        }
+    }
 
     public event Action OnEquiped;
     public event Action OnRemoved;
@@ -18,5 +25,11 @@ public abstract class Equipment : MonoBehaviour
         character = GetComponentInParent<CharacterBase>();
     }
 
-    public abstract void Initialize();
+    protected virtual void Initialize()
+    {
+        Instantiate(Equipment.equipmentModel, transform.position, Quaternion.identity);
+    }
+
+    protected abstract void OnEnable();
+    protected abstract void OnDisable();
 }

@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c0ef27012a4ea40893cecdd261c51a, type: 3}
   m_Name: Simple Projectile Weapon
   m_EditorClassIdentifier: 
-  weaponName: Simple Weapon
-  weaponDescription: A Simples Weapon for Test
-  element: {fileID: 11400000, guid: d6874137ddc77f74bbb4d82cc4094ee4, type: 2}
-  weaponModel: {fileID: 1066998517408661198, guid: 022e1dc424c3a7b47bdba12783c76cac,
+  itemName: Simple Projectile Weapon
+  description: A Simple Projectile Weapon
+  equipmentModel: {fileID: 1066998517408661198, guid: 022e1dc424c3a7b47bdba12783c76cac,
     type: 3}
+  speedModifierValue: 0
+  healthModifierValue: 0
+  attackModifierValue: 0
+  defenseModifierValue: 0
   totalAmmo: 10
   maxAmmo: 2
   timeToReload: 3

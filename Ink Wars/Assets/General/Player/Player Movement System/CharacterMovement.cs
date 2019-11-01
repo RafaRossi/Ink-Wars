@@ -9,7 +9,6 @@ public class CharacterMovement : CharacterComponent
 {
     private CharacterController controller;
 
-    [SerializeField]
     private float MoveSpeed
     {
         get
@@ -22,13 +21,14 @@ public class CharacterMovement : CharacterComponent
             Profile.speed = value;
         }
     }
-
-    [SerializeField]
+    
     private float turnSpeed = 0.1f;
 
     private float turnSmoothVelocity = 0;
 
     private Vector2 direction = Vector2.zero;
+
+    private Action<Vector2> OnDirectionChanged = delegate { };
 
     protected override void Awake()
     {
@@ -49,6 +49,8 @@ public class CharacterMovement : CharacterComponent
     public void SetDirection(Vector2 direction)
     {
         this.direction = direction;
+
+        OnDirectionChanged(this.direction);
     }
 
     private void FixedUpdate()
