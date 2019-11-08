@@ -16,14 +16,18 @@ public class CharacterAsset : ScriptableObject
     [SerializeField] private float baseAttack = 0;
     [SerializeField] private float baseDefense = 0;
 
-    [SerializeField] private GameObject characterModel = null;
+    [SerializeField] private GameObject characterPrefab = null;
 
     public string CharacterName { get => characterName; }
     public string Description { get => description; }
+
     public float MaxHealth { get => maxHealth; }
+    
     public float MovementSpeed { get => movementSpeed; }
     public float TurnSpeed { get => turnSpeed; }
+
     public float BaseAttack { get => baseAttack; }
     public float BaseDefense { get => baseDefense; }
-    public GameObject CharacterModel { get => characterModel; }
+
+    public GameObject CharacterPrefab { get => characterPrefab; }
 }

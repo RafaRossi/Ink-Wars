@@ -17,6 +17,8 @@ public class CharacterProfile
         clothes = player.clothes;
 
         items = player.items;
+
+        prefab = player.character.CharacterPrefab;
     }
 
     public float speed;
@@ -28,4 +30,6 @@ public class CharacterProfile
     public HatAssets hat;
     public ClothesAssets clothes;
     public List<ItemsAssets> items;
+
+    public GameObject prefab;
 }

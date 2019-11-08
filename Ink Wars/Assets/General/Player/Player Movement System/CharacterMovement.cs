@@ -9,16 +9,13 @@ public class CharacterMovement : CharacterComponent
 {
     private CharacterController controller;
 
-    private float MoveSpeed
+    private float moveSpeed = 0;
+    public float MoveSpeed
     {
-        get
-        {
-            return Profile.speed;
-        }
-
-        set
-        {
-            Profile.speed = value;
+        get => moveSpeed;
+        set 
+        { 
+            moveSpeed = value;
         }
     }
     
@@ -39,7 +36,7 @@ public class CharacterMovement : CharacterComponent
 
     protected override void InitializeComponent()
     {
-        
+        MoveSpeed = Profile.speed;
     }
     public void OnMoveRequest(InputAction.CallbackContext context)
     {
@@ -60,7 +57,7 @@ public class CharacterMovement : CharacterComponent
 
     public void Move(Vector3 direction)
     {
-        controller.Move(direction * Time.fixedDeltaTime * MoveSpeed* Time.fixedDeltaTime * MoveSpeed);
+        controller.Move(direction * Time.fixedDeltaTime * MoveSpeed);
 
         if (direction == Vector3.zero)
             return;

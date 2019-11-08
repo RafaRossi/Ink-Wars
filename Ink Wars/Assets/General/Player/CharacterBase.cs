@@ -8,6 +8,8 @@ public class CharacterBase : MonoBehaviour
     public PlayerData player;
 
     public CharacterProfile profile;
+
+    private CharacterModel model;
     
     public Action InitializeCharacter = delegate { };
 
@@ -16,23 +18,24 @@ public class CharacterBase : MonoBehaviour
         profile = new CharacterProfile(player);
     }
 
-    private void OnEnable()
+    private void OnEnable() 
     {
-        InitializeCharacter += Initialize;
+        InitializeCharacter += InstantiateCharacter;
     }
-
     private void OnDisable()
     {
-        InitializeCharacter -= Initialize;
-    }
-
-    private void Initialize()
-    {
-        player.Initialize(gameObject);
+        InitializeCharacter -= InstantiateCharacter;
     }
 
     private void Start()
     {
         InitializeCharacter();
+    }
+
+    public void InstantiateCharacter()
+    {
+        model = Instantiate(profile.prefab, transform.position, Quaternion.identity, transform).GetComponent<CharacterModel>();
+
+        model.Initialize(profile);
     }
 }

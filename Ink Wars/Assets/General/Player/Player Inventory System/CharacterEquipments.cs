@@ -3,24 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CharacterEquipments : CharacterComponent
+public class CharacterEquipments : CharacterComponent
 {
-    protected CharacterInventory inventory;
-
-    protected virtual EquipmentAssets Equipment { get; set; }
+    public WeaponAsset Weapon { get => Profile.weapon; }
+    public HatAssets Hat { get => Profile.hat; }
+    public ClothesAssets Clothes { get => Profile.clothes; }
 
     protected override void Awake()
     {
         character = GetComponentInParent<CharacterBase>();
-
-        inventory = GetComponentInParent<CharacterInventory>();
     }
     
     protected override void InitializeComponent()
     {
-        if(Equipment)
-        {
-            Equipment.Initialize(gameObject);
-        }
+        Weapon.Initialize(gameObject);
+
+        Hat.Initialize(gameObject);
+
+        Clothes.Initialize(gameObject);
     }
 }

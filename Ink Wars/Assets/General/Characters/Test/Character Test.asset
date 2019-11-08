@@ -15,8 +15,9 @@ MonoBehaviour:
   characterName: Test
   description: Test description
   maxHealth: 10
-  movementSpeed: 10
+  movementSpeed: 4
   turnSpeed: 0.1
   baseAttack: 5
   baseDefense: 3
-  characterModel: {fileID: 0}
+  characterPrefab: {fileID: 3475485291944154429, guid: 3868eed6871478e4fa2113e6ff935bdc,
+    type: 3}

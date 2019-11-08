@@ -12,7 +12,6 @@ public abstract class VirtualJoystickButton : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         OnButtonPressed();
-        Debug.Log("ok");
     }
 
     public void OnPointerUp(PointerEventData eventData)

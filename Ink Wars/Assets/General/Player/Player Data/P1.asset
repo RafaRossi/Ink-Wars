@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 324ffa79fbfc1274890366430f036692, type: 2}
   weapon: {fileID: 11400000, guid: b0d55968ba34bf048b765549d1433dc5, type: 2}
-  hat: {fileID: 0}
-  clothes: {fileID: 0}
+  hat: {fileID: 11400000, guid: 977d0c42d735624458f27fd4e09f12d4, type: 2}
+  clothes: {fileID: 11400000, guid: ed6843ec1bbfbed41b89b78dbfef5122, type: 2}
   items: []

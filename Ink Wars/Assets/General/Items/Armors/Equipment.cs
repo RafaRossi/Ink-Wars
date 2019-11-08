@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterBase))]
 public abstract class Equipments : MonoBehaviour
 {
     protected virtual EquipmentAssets Equipment { get; set; }
@@ -25,10 +24,7 @@ public abstract class Equipments : MonoBehaviour
         character = GetComponentInParent<CharacterBase>();
     }
 
-    protected virtual void Initialize()
-    {
-        Instantiate(Equipment.equipmentModel, transform.position, Quaternion.identity);
-    }
+    protected abstract void Initialize();
 
     protected abstract void OnEnable();
     protected abstract void OnDisable();
