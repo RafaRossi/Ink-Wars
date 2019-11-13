@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   description: 
-  equipmentModel: {fileID: 100000, guid: 959be6347b65b7a4c9baa6bc323541fd, type: 3}
-  speedModifierValue: 0
-  healthModifierValue: 0
+  equipmentModel: {fileID: 7728396213490453551, guid: 7661c344ca525974783ce2e9dd159b91,
+    type: 3}
+  speedModifierValue: 2
+  healthModifierValue: 2
   attackModifierValue: 0
   defenseModifierValue: 0

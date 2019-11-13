@@ -2,22 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hat : Equipments
+public class Hat : Equipment
 {
-    protected override EquipmentAssets Equipment => Profile.hat;
+    protected override EquipmentAssets EquipmentAsset => Profile.hat;
 
     protected override void Initialize()
     {
-        
-    }
-
-    protected override void OnDisable()
-    {
-        
-    }
-
-    protected override void OnEnable()
-    {
-        
+        base.Initialize();
     }
 }

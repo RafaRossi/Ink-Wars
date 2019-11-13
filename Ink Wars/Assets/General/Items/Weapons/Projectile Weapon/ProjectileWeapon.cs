@@ -20,31 +20,31 @@ public class ProjectileWeapon : Weapon
 
     private bool CanShoot { get { return HasAmmo() && !IsCoolDown(); } }
 
-    private ProjectileWeaponAssets projectileWeapon;
+    private ProjectileWeaponAssets projectileWeaponAsset;
 
     protected override void Initialize()
     {
         base.Initialize();
+        
+        projectileWeaponAsset = EquipmentAsset as ProjectileWeaponAssets;
 
-        projectileWeapon = weapon as ProjectileWeaponAssets;
-
-        totalAmmo = projectileWeapon.totalAmmo;
-        maxAmmo = projectileWeapon.maxAmmo;
+        totalAmmo = projectileWeaponAsset.totalAmmo;
+        maxAmmo = projectileWeaponAsset.maxAmmo;
         currentAmmo = maxAmmo;
 
-        timeToReload = projectileWeapon.timeToReload;
-        timeBetweenShots = projectileWeapon.timeBetweenShots;
+        timeToReload = projectileWeaponAsset.timeToReload;
+        timeBetweenShots = projectileWeaponAsset.timeBetweenShots;
 
-        shootForce = projectileWeapon.shootForce;
+        shootForce = projectileWeaponAsset.shootForce;
     }
 
     public override void Trigger()
     {
         if (CanShoot)
         {
-            var projectile = Instantiate(projectileWeapon.projectile.projectilePrefab, weaponHandler.position, Quaternion.identity);
+            var projectile = Instantiate(projectileWeaponAsset.projectile.projectilePrefab, weaponHandler.position, Quaternion.identity);
 
-            projectile.GetComponent<Rigidbody>().AddForce(weaponHandler.transform.forward * projectileWeapon.shootForce);
+            projectile.GetComponent<Rigidbody>().AddForce(weaponHandler.transform.forward * projectileWeaponAsset.shootForce);
 
             currentAmmo -= 1;
         }       

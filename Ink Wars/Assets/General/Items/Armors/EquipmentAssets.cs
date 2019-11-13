@@ -12,17 +12,30 @@ public abstract class EquipmentAssets : ItemsAssets
     public float attackModifierValue;
     public float defenseModifierValue;
 
-    public Action<CharacterProfile> OnEquip => AddStats;
-    public Action<CharacterProfile> OnUnequip => RemoveStats;
+    public Action<CharacterProfile> OnEquip = delegate { };
+    public Action<CharacterProfile> OnUnequip = delegate { };
 
     public override void Initialize(GameObject obj)
     {
-        CharacterEquipments character = obj.GetComponent<CharacterEquipments>();
+        CharacterBase character = obj.GetComponent<CharacterBase>();
 
         if(character)
         {
-            OnEquip(character.Profile);
+            OnEquip(character.profile);
+            Debug.Log("ok");
         }
+    }
+
+    private void OnEnable()
+    {
+        OnEquip += AddStats;
+        OnUnequip += RemoveStats;
+    }
+
+    private void OnDisable()
+    {
+        OnEquip -= AddStats;
+        OnUnequip -= RemoveStats;
     }
 
     public virtual void AddStats(CharacterProfile profile)

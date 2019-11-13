@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Equipments : MonoBehaviour
+public abstract class Equipment : MonoBehaviour
 {
-    protected virtual EquipmentAssets Equipment { get; set; }
+    protected virtual EquipmentAssets EquipmentAsset { get; set; }
 
     protected CharacterBase character;
     protected CharacterProfile Profile
@@ -16,6 +16,8 @@ public abstract class Equipments : MonoBehaviour
         }
     }
 
+    public Action OnInitializeRequest;
+
     public event Action OnEquiped;
     public event Action OnRemoved;
 
@@ -24,8 +26,18 @@ public abstract class Equipments : MonoBehaviour
         character = GetComponentInParent<CharacterBase>();
     }
 
-    protected abstract void Initialize();
+    protected virtual void Initialize()
+    {
+        
+    }
 
-    protected abstract void OnEnable();
-    protected abstract void OnDisable();
+    protected virtual void OnEnable()
+    {
+        OnInitializeRequest += Initialize;
+    }
+
+    protected virtual void OnDisable()
+    {
+        OnInitializeRequest -= Initialize;
+    }
 }

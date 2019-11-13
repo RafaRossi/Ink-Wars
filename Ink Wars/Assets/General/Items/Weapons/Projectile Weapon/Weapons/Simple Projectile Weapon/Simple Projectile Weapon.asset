@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Simple Projectile Weapon
   description: A Simple Projectile Weapon
-  equipmentModel: {fileID: 1066998517408661198, guid: 022e1dc424c3a7b47bdba12783c76cac,
+  equipmentModel: {fileID: 1570290125810863965, guid: 022e1dc424c3a7b47bdba12783c76cac,
     type: 3}
   speedModifierValue: 0
   healthModifierValue: 0
@@ -24,5 +24,5 @@ MonoBehaviour:
   maxAmmo: 2
   timeToReload: 3
   timeBetweenShots: 1
-  shootForce: 1000
+  shootForce: 10000
   projectile: {fileID: 11400000, guid: b89690c663aebaf48b0158c4024ea56e, type: 2}

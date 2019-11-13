@@ -19,26 +19,6 @@ public class ProjectileWeaponAssets : WeaponAsset
     public ProjectileAsset projectile;
     public override void Initialize(GameObject obj)
     {
-        ProjectileWeapon projectileWeapon = Instantiate(equipmentModel, obj.transform.position, Quaternion.identity, obj.transform).GetComponent<ProjectileWeapon>();
-
-        projectileWeapon.totalAmmo = totalAmmo;
-        projectileWeapon.maxAmmo = maxAmmo;
-        projectileWeapon.currentAmmo = maxAmmo;
-
-        projectileWeapon.timeToReload = timeToReload;
-        projectileWeapon.timeBetweenShots = timeBetweenShots;
-
-        projectileWeapon.shootForce = shootForce;
-
-        /*ProjectileWeapon projectileWeapon = weapon.GetComponent<ProjectileWeapon>();
-
-        projectileWeapon.totalAmmo = totalAmmo;
-        projectileWeapon.maxAmmo = maxAmmo;
-        projectileWeapon.currentAmmo = maxAmmo;
-
-        projectileWeapon.timeToReload = timeToReload;
-        projectileWeapon.timeBetweenShots = timeBetweenShots;
-
-        projectileWeapon.shootForce = shootForce;*/
+        
     }
 }

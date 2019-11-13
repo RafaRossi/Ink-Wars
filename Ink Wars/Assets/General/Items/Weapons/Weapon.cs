@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : Equipments, ITriggerable
+public abstract class Weapon : Equipment, ITriggerable
 {
     [Header("Weapon Properties")]
     [SerializeField] protected Transform weaponHandler;
 
-    [SerializeField] protected WeaponAsset weapon => Profile.weapon;
+    protected override EquipmentAssets EquipmentAsset => Profile.weapon;
 
     protected CharacterFire characterFire;
 
@@ -20,17 +20,22 @@ public abstract class Weapon : Equipments, ITriggerable
 
     protected override void OnEnable()
     {
+        base.OnEnable();
+
         characterFire.Fire += Trigger;
     }
 
     protected override void OnDisable()
     {
+        base.OnDisable();
+
         characterFire.Fire -= Trigger;
     }
 
     protected override void Initialize()
     {
-        Instantiate(weapon.equipmentModel, transform.position, Quaternion.identity, characterFire.gameObject.transform);     
+        base.Initialize();
     }    
+
     public abstract void Trigger();
 }
