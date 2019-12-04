@@ -8,7 +8,10 @@ public class ProjectileAsset : ItemsAssets
 {
     [Header("Projectile Properties")]
     public float baseDamage;
+    public float movementSpeed;
+
     public float mass;
+    public bool useGravity;
 
     [Header("Projectile Prefabs")]
     public GameObject projectilePrefab;
@@ -17,13 +20,6 @@ public class ProjectileAsset : ItemsAssets
 
     public override void Initialize(GameObject obj)
     {
-        Projectiles projectile = obj.GetComponent<Projectiles>();
-
-        projectile.BaseDamage = baseDamage;
-        projectile.Mass = mass;
-
-        projectile.ProjectileImapctParticles = projectileImpactParticles;
-
-        projectile.Initialize();
+        
     }
 }

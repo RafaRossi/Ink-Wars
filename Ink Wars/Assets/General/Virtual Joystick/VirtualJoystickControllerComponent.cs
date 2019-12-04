@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public class VirtualJoystickControllerComponent : MonoBehaviour
+public class VirtualJoystickControllerComponent : CharacterComponent
 {
     [SerializeField] private VirtualJoystick joystick;
     public VirtualJoystick Joystick
@@ -20,22 +20,17 @@ public class VirtualJoystickControllerComponent : MonoBehaviour
     }
 
     [SerializeField]
-    public Vector2Event OnJoystickAxisChanged = null;
+    public Vector2Event OnLeftJoystickAxisChanged = null;
+    public Vector2Event OnRightJoystickAxisChange = null;
     public UnityEvent OnFireButtonPressed = null;
     public UnityEvent OnFireButtonRelease = null;
-
-    private void OnEnable()
+    
+    protected override void InitializeComponent()
     {
-        Joystick.Analog.OnAxisChanged += OnJoystickAxisChanged.Invoke;
+        Joystick.LeftAnalog.OnAxisChanged += OnLeftJoystickAxisChanged.Invoke;
+        Joystick.RightAnalog.OnAxisChanged += OnRightJoystickAxisChange.Invoke;
 
         Joystick.FireButton.OnButtonPressed += OnFireButtonPressed.Invoke;
         Joystick.FireButton.OnButtonReleased += OnFireButtonRelease.Invoke;
-    }
-    private void OnDisable()
-    {
-        Joystick.Analog.OnAxisChanged -= OnJoystickAxisChanged.Invoke;
-
-        Joystick.FireButton.OnButtonPressed -= OnFireButtonPressed.Invoke;
-        Joystick.FireButton.OnButtonReleased -= OnFireButtonRelease.Invoke;
     }
 }

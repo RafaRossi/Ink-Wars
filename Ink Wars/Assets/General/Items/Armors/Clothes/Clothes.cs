@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Clothes : Equipment
 {
-    protected override EquipmentAssets EquipmentAsset => Profile.clothes;
+    public override EquipmentAssets EquipmentAsset => Profile.clothes;
 
     protected override void Initialize()
     {

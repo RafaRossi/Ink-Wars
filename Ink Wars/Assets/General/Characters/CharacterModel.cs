@@ -11,7 +11,6 @@ public class CharacterModel : MonoBehaviour
     public System.Action<CharacterProfile> Initialize;
 
     private CharacterBase character;
-    private Weapon weapon;
 
     private void Awake()
     {

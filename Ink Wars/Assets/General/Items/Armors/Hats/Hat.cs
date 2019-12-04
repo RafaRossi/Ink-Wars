@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hat : Equipment
 {
-    protected override EquipmentAssets EquipmentAsset => Profile.hat;
+    public override EquipmentAssets EquipmentAsset => Profile.hat;
 
     protected override void Initialize()
     {

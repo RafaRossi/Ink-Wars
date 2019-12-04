@@ -22,7 +22,6 @@ public abstract class EquipmentAssets : ItemsAssets
         if(character)
         {
             OnEquip(character.profile);
-            Debug.Log("ok");
         }
     }
 

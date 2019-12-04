@@ -15,7 +15,9 @@ MonoBehaviour:
   itemName: Simple Projectile
   description: A simple projectile
   baseDamage: 10
-  mass: 0.2
+  movementSpeed: 3000
+  mass: 5
+  useGravity: 0
   projectilePrefab: {fileID: 7622574648227387697, guid: 29b6848cd420b42479a9e024b81d34cd,
     type: 3}
   projectileImpactParticles: {fileID: 7622574648227387697, guid: 29b6848cd420b42479a9e024b81d34cd,

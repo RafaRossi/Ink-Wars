@@ -18,10 +18,6 @@ public class CharacterMovement : CharacterComponent
             moveSpeed = value;
         }
     }
-    
-    private float turnSpeed = 0.1f;
-
-    private float turnSmoothVelocity = 0;
 
     private Vector2 direction = Vector2.zero;
 
@@ -57,12 +53,6 @@ public class CharacterMovement : CharacterComponent
 
     public void Move(Vector3 direction)
     {
-        controller.Move(direction * Time.fixedDeltaTime * MoveSpeed);
-
-        if (direction == Vector3.zero)
-            return;
-
-        float desiredRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, desiredRotation, ref turnSmoothVelocity, turnSpeed);
+        controller.Move(direction * Time.fixedDeltaTime * MoveSpeed);  
     }
 }

@@ -1,15 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Weapon : Equipment, ITriggerable
 {
-    [Header("Weapon Properties")]
-    [SerializeField] protected Transform weaponHandler;
+    public Action OnTriggerRequest = delegate { };
 
-    protected override EquipmentAssets EquipmentAsset => Profile.weapon;
+    public override EquipmentAssets EquipmentAsset => Profile.weapon;
 
     protected CharacterFire characterFire;
+
+    public abstract bool CanShoot { get; }
 
     protected override void Awake()
     {

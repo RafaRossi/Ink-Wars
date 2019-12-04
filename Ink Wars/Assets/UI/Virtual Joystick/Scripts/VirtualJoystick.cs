@@ -5,17 +5,12 @@ using UnityEngine;
 public class VirtualJoystick : MonoBehaviour
 {
     [SerializeField]
-    private VirtualJoystickAnalog analog;
-    public VirtualJoystickAnalog Analog
+    private VirtualJoystickAnalog leftAnalog;
+    public VirtualJoystickAnalog LeftAnalog
     {
         get
         {
-            if(!analog)
-            {
-                analog = GetComponentInParent<VirtualJoystickAnalog>();
-            }
-
-            return analog;
+            return leftAnalog;
         }
     }
     
@@ -32,4 +27,13 @@ public class VirtualJoystick : MonoBehaviour
         }
     }
     
+    [SerializeField]
+    private VirtualJoystickAnalog rightAnalog;
+    public VirtualJoystickAnalog RightAnalog
+    {
+        get
+        {
+            return rightAnalog;
+        }
+    }
 }

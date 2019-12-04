@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Equipment : MonoBehaviour
 {
-    protected virtual EquipmentAssets EquipmentAsset { get; set; }
+    public virtual EquipmentAssets EquipmentAsset { get; set; }
 
     protected CharacterBase character;
     protected CharacterProfile Profile

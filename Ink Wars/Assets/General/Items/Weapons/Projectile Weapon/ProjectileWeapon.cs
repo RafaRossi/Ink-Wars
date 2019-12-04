@@ -14,40 +14,34 @@ public class ProjectileWeapon : Weapon
 
     [HideInInspector] [Min(0)] public float timeBetweenShots = 0;
 
-    [HideInInspector] [Min(0)] public float shootForce = 0;
+    [HideInInspector] [Min(0)] public int ammoPerShot = 0;
 
     private float lastShotTime = 0;
 
-    private bool CanShoot { get { return HasAmmo() && !IsCoolDown(); } }
-
-    private ProjectileWeaponAssets projectileWeaponAsset;
+    public override bool CanShoot { get { return HasAmmo() && !IsCoolDown(); } }
 
     protected override void Initialize()
     {
         base.Initialize();
         
-        projectileWeaponAsset = EquipmentAsset as ProjectileWeaponAssets;
+        ProjectileWeaponAssets projectileWeapon = EquipmentAsset as ProjectileWeaponAssets;
 
-        totalAmmo = projectileWeaponAsset.totalAmmo;
-        maxAmmo = projectileWeaponAsset.maxAmmo;
+        totalAmmo = projectileWeapon.totalAmmo;
+        maxAmmo = projectileWeapon.maxAmmo;
         currentAmmo = maxAmmo;
 
-        timeToReload = projectileWeaponAsset.timeToReload;
-        timeBetweenShots = projectileWeaponAsset.timeBetweenShots;
-
-        shootForce = projectileWeaponAsset.shootForce;
+        timeToReload = projectileWeapon.timeToReload;
+        timeBetweenShots = projectileWeapon.timeBetweenShots;
     }
 
     public override void Trigger()
     {
-        if (CanShoot)
-        {
-            var projectile = Instantiate(projectileWeaponAsset.projectile.projectilePrefab, weaponHandler.position, Quaternion.identity);
+         if(!CanShoot)
+            return;
 
-            projectile.GetComponent<Rigidbody>().AddForce(weaponHandler.transform.forward * projectileWeaponAsset.shootForce);
+        OnTriggerRequest();
 
-            currentAmmo -= 1;
-        }       
+        currentAmmo -= ammoPerShot;
     }
 
     private bool IsCoolDown()
@@ -61,11 +55,11 @@ public class ProjectileWeapon : Weapon
 
     private bool HasAmmo()
     {
-        if (currentAmmo > 0)
+        if (currentAmmo >= ammoPerShot)
         {
             return true;
         }
-        else if(totalAmmo > 0)
+        else if(totalAmmo > ammoPerShot)
         {
             StartCoroutine(Reload(timeToReload));
         }
