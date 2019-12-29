@@ -33,11 +33,24 @@ public class VirtualJoystickAnalog : MonoBehaviour, IDragHandler, IPointerDownHa
 
     public Action<Vector2> OnAxisChanged = delegate { };
 
+    public Action OnAxisPressed = delegate { };
+    public Action OnAxisReleased = delegate { };
+
     public virtual void OnDrag(PointerEventData eventData) => MoveJoystick(eventData);
 
-    public virtual void OnPointerDown(PointerEventData eventData) => MoveJoystick(eventData);
+    public virtual void OnPointerDown(PointerEventData eventData) => OnAxisPressed();
 
-    public virtual void OnPointerUp(PointerEventData eventData) => ResetJoystick();
+    public virtual void OnPointerUp(PointerEventData eventData) => OnAxisReleased();
+
+    private void OnEnable() 
+    {
+        OnAxisReleased += ResetJoystick;
+    }
+
+    private void OnDisable() 
+    {
+        OnAxisReleased -= ResetJoystick;
+    }
 
     private void MoveJoystick(PointerEventData eventData)
     {

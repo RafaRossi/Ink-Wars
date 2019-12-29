@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c0ef27012a4ea40893cecdd261c51a, type: 3}
-  m_Name: TripleProjectile
+  m_Name: Triple Projectile
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  equipmentModel: {fileID: 0}
+  itemName: Triple Projectile Weapon
+  description: A simple Shotgun
+  equipmentModel: {fileID: 1570290125810863965, guid: acc87d9f477c98044a46418c3218d68a,
+    type: 3}
   speedModifierValue: 0
   healthModifierValue: 0
   attackModifierValue: 0
   defenseModifierValue: 0
-  totalAmmo: 0
-  maxAmmo: 0
-  timeToReload: 0
-  timeBetweenShots: 0
-  shootForce: 0
-  projectile: {fileID: 0}
+  totalAmmo: 21
+  maxAmmo: 21
+  timeToReload: 2
+  timeBetweenShots: 1
+  shootForce: 1000
+  projectile: {fileID: 11400000, guid: b89690c663aebaf48b0158c4024ea56e, type: 2}

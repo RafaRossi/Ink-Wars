@@ -9,15 +9,7 @@ public class CharacterMovement : CharacterComponent
 {
     private CharacterController controller;
 
-    private float moveSpeed = 0;
-    public float MoveSpeed
-    {
-        get => moveSpeed;
-        set 
-        { 
-            moveSpeed = value;
-        }
-    }
+    public float MoveSpeed { get; set; } = 0;
 
     private Vector2 direction = Vector2.zero;
 

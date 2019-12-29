@@ -13,9 +13,6 @@ public class CharacterProfile
         defense = player.character.BaseDefense;
 
         weapon = player.weapon;
-        hat = player.hat;
-        clothes = player.clothes;
-
         items = player.items;
 
         prefab = player.character.CharacterPrefab;
@@ -27,8 +24,6 @@ public class CharacterProfile
     public float defense;
 
     public WeaponAsset weapon;
-    public HatAssets hat;
-    public ClothesAssets clothes;
     public List<ItemsAssets> items;
 
     public GameObject prefab;

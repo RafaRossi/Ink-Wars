@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class VirtualJoystick : MonoBehaviour
 {
-    [SerializeField]
-    private VirtualJoystickAnalog leftAnalog;
+    [SerializeField] private VirtualJoystickAnalog leftAnalog;
     public VirtualJoystickAnalog LeftAnalog
     {
         get
@@ -14,8 +13,7 @@ public class VirtualJoystick : MonoBehaviour
         }
     }
     
-    [SerializeField]
-    private VirtualJoystickFireButton fireButton;
+    [SerializeField] private VirtualJoystickFireButton fireButton;
     public VirtualJoystickFireButton FireButton
     {
         get
@@ -27,8 +25,7 @@ public class VirtualJoystick : MonoBehaviour
         }
     }
     
-    [SerializeField]
-    private VirtualJoystickAnalog rightAnalog;
+    [SerializeField] private VirtualJoystickAnalog rightAnalog;
     public VirtualJoystickAnalog RightAnalog
     {
         get

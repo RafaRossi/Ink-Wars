@@ -10,6 +10,8 @@ public class CharacterFire : CharacterComponent
 
     private Vector2 direction = Vector2.zero;
 
+    private float maxAimMagnitude = 0.8f;
+
     protected override void InitializeComponent()
     {
         
@@ -17,20 +19,20 @@ public class CharacterFire : CharacterComponent
 
     private void Update() 
     {
-        if(direction != Vector2.zero)
+        if(direction.magnitude> maxAimMagnitude)
         {
             FireRequest();
         }
+    }  
+
+    public void FireRequest()
+    {
+        Fire();
     }
 
     public void OnFireRequest(InputAction.CallbackContext context)
     {
         SetAimDirection(transform.forward);
-    }
-
-    public void FireRequest()
-    {
-        Fire();
     }
 
     public void SetAimDirection(Vector2 direction)

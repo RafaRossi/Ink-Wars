@@ -9,8 +9,6 @@ public class PlayerData : ScriptableObject
     public CharacterAsset character;
     
     public WeaponAsset weapon;
-    public HatAssets hat;
-    public ClothesAssets clothes;
  
     public List<ItemsAssets> items = new List<ItemsAssets>();
 }
