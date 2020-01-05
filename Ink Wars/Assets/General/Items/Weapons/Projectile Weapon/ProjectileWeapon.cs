@@ -7,7 +7,7 @@ public class ProjectileWeapon : Weapon
 {
     [HideInInspector] [Min(0)] public int totalAmmo = 0;
 
-    [HideInInspector] [Min(0)] public int maxAmmo = 0;
+    [HideInInspector] [Min(0)] public int maxReloadedAmmo = 0;
     [HideInInspector] [Min(0)] public int currentAmmo = 0;
 
     [HideInInspector] [Min(0)] public float timeToReload = 0;
@@ -16,22 +16,15 @@ public class ProjectileWeapon : Weapon
 
     [HideInInspector] [Min(0)] public int ammoPerShot = 0;
 
+    [HideInInspector] public ProjectileAsset projectile;
+
     private float lastShotTime = 0;
 
     public override bool CanShoot { get { return HasAmmo() && !IsCoolDown(); } }
 
     protected override void Initialize()
-    {
-        base.Initialize();
-        
-        ProjectileWeaponAssets projectileWeapon = EquipmentAsset as ProjectileWeaponAssets;
-
-        totalAmmo = projectileWeapon.totalAmmo;
-        maxAmmo = projectileWeapon.maxAmmo;
-        currentAmmo = maxAmmo;
-
-        timeToReload = projectileWeapon.timeToReload;
-        timeBetweenShots = projectileWeapon.timeBetweenShots;
+    {   
+        currentAmmo = maxReloadedAmmo;
     }
 
     public override void Trigger()
@@ -70,7 +63,7 @@ public class ProjectileWeapon : Weapon
     {
         yield return new WaitForSeconds(time);
 
-        totalAmmo -= maxAmmo;
-        currentAmmo = maxAmmo;
+        totalAmmo -= maxReloadedAmmo;
+        currentAmmo = maxReloadedAmmo;
     }
 }

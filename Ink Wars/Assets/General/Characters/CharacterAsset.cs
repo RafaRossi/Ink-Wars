@@ -6,28 +6,13 @@ using UnityEngine;
 public class CharacterAsset : ScriptableObject
 {
     [SerializeField] private string characterName = "";
-    [SerializeField] private string description = "";
-
-    [SerializeField] private float maxHealth = 0;
-
-    [SerializeField] private float movementSpeed = 0;
-    [SerializeField] private float turnSpeed = 0;
-
-    [SerializeField] private float baseAttack = 0;
-    [SerializeField] private float baseDefense = 0;
-
-    [SerializeField] private GameObject characterPrefab = null;
-
     public string CharacterName { get => characterName; }
+
+    [SerializeField] private string description = "";
     public string Description { get => description; }
 
-    public float MaxHealth { get => maxHealth; }
-    
-    public float MovementSpeed { get => movementSpeed; }
-    public float TurnSpeed { get => turnSpeed; }
-
-    public float BaseAttack { get => baseAttack; }
-    public float BaseDefense { get => baseDefense; }
-
+    [SerializeField] private GameObject characterPrefab = null;
     public GameObject CharacterPrefab { get => characterPrefab; }
+
+    public List<CharacterStats> characterStats = new List<CharacterStats>();
 }

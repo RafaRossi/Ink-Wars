@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Test
   description: Test description
-  maxHealth: 10
-  movementSpeed: 4
-  turnSpeed: 0.1
-  baseAttack: 5
-  baseDefense: 3
   characterPrefab: {fileID: 3475485291944154429, guid: 3868eed6871478e4fa2113e6ff935bdc,
     type: 3}
+  characterStats:
+  - stat: {fileID: 11400000, guid: 0bab7c2c4c51174438a11586e3143241, type: 2}
+    value: 12
+  - stat: {fileID: 11400000, guid: 30f2f7d388e97034ea3cf9b509ffc9d9, type: 2}
+    value: 10

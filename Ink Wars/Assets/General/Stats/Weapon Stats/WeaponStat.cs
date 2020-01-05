@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponAsset : ItemsAssets
+public abstract class WeaponStat : Stat
 {
-    public GameObject itemModel;
+    
 }

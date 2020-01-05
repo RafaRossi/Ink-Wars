@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76952f4efe2a1cb4590d36b0df89316e, type: 3}
-  m_Name: P1
+  m_Script: {fileID: 11500000, guid: 0a8810a1d2b651d4b9d76d34cce25103, type: 3}
+  m_Name: Health 1
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 324ffa79fbfc1274890366430f036692, type: 2}
-  weapon: {fileID: 11400000, guid: ea80c61ece8870d40a4b712986b131c8, type: 2}
-  items: []
+  itemName: Health 1
+  description: 
+  itemImg: {fileID: 0}
+  modifiers:
+  - stat: {fileID: 0}
+    value: 0

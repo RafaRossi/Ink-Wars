@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponAsset : ItemsAssets
+public class SimpleProjectile : Projectiles
 {
-    public GameObject itemModel;
+    
 }

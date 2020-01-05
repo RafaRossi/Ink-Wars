@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "New Projectile", menuName = "Projectile")]
-public class ProjectileAsset : ItemsAssets
+public abstract class ProjectileAsset : ItemsAssets
 {
     [Header("Projectile Properties")]
-    public float baseDamage;
     public float movementSpeed;
-
     public float mass;
     public bool useGravity;
 

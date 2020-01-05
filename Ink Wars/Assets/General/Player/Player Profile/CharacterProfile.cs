@@ -7,24 +7,20 @@ public class CharacterProfile
 {
     public CharacterProfile(PlayerData player)
     {
-        speed = player.character.MovementSpeed;
-        health = player.character.MaxHealth;
-        attack = player.character.BaseAttack;
-        defense = player.character.BaseDefense;
+        characterStats = new List<CharacterStats>();
 
-        weapon = player.weapon;
-        items = player.items;
+        foreach (CharacterStats stat in player.character.characterStats)
+        {
+            characterStats.Add(new CharacterStats { stat = stat.stat, value = stat.value} );
+        }
 
         prefab = player.character.CharacterPrefab;
+        weapon = player.weapon;
+        items = player.items;
     }
-
-    public float speed;
-    public float health;
-    public float attack;
-    public float defense;
-
+    
+    public List<CharacterStats> characterStats;
     public WeaponAsset weapon;
     public List<ItemsAssets> items;
-
     public GameObject prefab;
 }

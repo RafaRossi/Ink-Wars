@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WeaponHandler : MonoBehaviour
+public abstract class WeaponHandler<T> : MonoBehaviour where T : Weapon
 {
-    [SerializeField] private Weapon weapon;
-    protected Weapon Weapon
+    private T weapon;
+    protected T Weapon
     {
         get
         {
             if(!weapon)
             {
-                weapon = GetComponentInParent<Weapon>();
+                weapon = GetComponentInParent<T>();
             }
             return weapon;
         }

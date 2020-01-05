@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Projectiles : MonoBehaviour
+public abstract class Projectiles : MonoBehaviour
 {
     [SerializeField] private ProjectileAsset projectile;
 
@@ -55,7 +55,6 @@ public class Projectiles : MonoBehaviour
     {
         projectile = asset;
 
-        BaseDamage = asset.baseDamage;
         MovementSpeed = asset.movementSpeed;
 
         Mass = asset.mass;

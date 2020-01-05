@@ -27,6 +27,6 @@ public class CharacterModel : MonoBehaviour
 
     private void InitializeModels(CharacterProfile profile)
     {
-        Instantiate(profile.weapon.equipmentModel, weaponHolder.position, weaponHolder.rotation, weaponHolder);
+        Instantiate(profile.weapon.itemModel, weaponHolder.position, weaponHolder.rotation, weaponHolder);
     }
 }

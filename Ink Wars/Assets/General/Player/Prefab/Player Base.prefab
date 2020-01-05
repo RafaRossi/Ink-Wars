@@ -171,13 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 12dc1e2eba3fb5449bf409e48f1ee57d, type: 2}
   profile:
-    speed: 0
-    health: 0
-    attack: 0
-    defense: 0
+    characterStats: []
     weapon: {fileID: 0}
-    hat: {fileID: 0}
-    clothes: {fileID: 0}
     items: []
     prefab: {fileID: 0}
 --- !u!114 &6166110226067613986
@@ -216,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e090c159238254699b8236f85bb433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 11400000, guid: 0bab7c2c4c51174438a11586e3143241, type: 2}
 --- !u!114 &2315862172724065521
 MonoBehaviour:
   m_ObjectHideFlags: 0
